@@ -1,0 +1,24 @@
+# Ubuntu
+
+## Overview
+Ubuntu container with GMT timezone, GB locale and additional tools preinstalled.
+
+## Commands
+```bash
+# build and test locally
+d build -t ubuntu-test:latest . &&
+d run -it --rm --name ubuntu-test ubuntu-test:latest /bin/bash
+
+# build
+d build -t adegoodyer/ubuntu:22.04 -t adegoodyer/ubuntu:latest .
+
+# sec scan
+grype adegoodyer/ubuntu:latest
+
+# generate SBOM
+syft adegoodyer/ubuntu:latest
+
+# push
+d logout && d login --username=adegoodyer
+d push adegoodyer/ubuntu --all-tags
+```
