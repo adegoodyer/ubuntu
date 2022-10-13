@@ -29,7 +29,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags:
-            ${{ secrets.DOCKER_HUB_USERNAME }}/ubuntu:${{ github.ref.name }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/ubuntu:${{ github.ref_name }}
             ${{ secrets.DOCKER_HUB_USERNAME }}/ubuntu:latest
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/ubuntu:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/ubuntu:buildcache,mode=max
