@@ -24,8 +24,19 @@ d run -itd \
 --name adegoodyer-ubuntu-latest \
 adegoodyer/ubuntu:latest
 
+# persistent container (specify network)
+d run -itd \
+--network host \
+--name kubernetes-admin-toolkit-latest \
+adegoodyer/kubernetes-admin-toolkit:latest
+
 # connect to persistent container
 d exec -it adegoodyer-ubuntu-latest /bin/bash
+
+# stop and remove persistent container
+# (d kill won't always remove)
+d stop kubernetes-admin-toolkit-latest && \
+d rm kubernetes-admin-toolkit-latest
 ```
 
 ## Build Commands
