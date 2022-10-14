@@ -4,6 +4,21 @@
 Ubuntu container with GMT timezone, GB locale and additional tools preinstalled.
 
 ## Commands
+
+## Git
+- make change and push as usual
+- image build and push will occur when a tag is added
+  - can be any branch
+  - much be of format '[0-9][0-9]+.[0-9][0-9]+' (e.g. 22.04) for pipeline to execute
+```bash
+# add tag
+git tag -a 22.04 -m 22.04
+
+# push tag
+git push --follow-tags
+```
+
+## Docker
 ```bash
 # build and test locally
 d build -t ubuntu-test:latest . &&
