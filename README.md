@@ -30,6 +30,12 @@ d exec -it adegoodyer-ubuntu-latest /bin/bash
 
 ## Build Commands
 
+### Documentation
+```bash
+# generate grype, syft and README.md
+./scripts/gen-docs.sh
+```
+
 ### Git
 - make change and push as usual
 - image build and push will occur when a tag is added
@@ -84,8 +90,8 @@ ncurses-bin        6.3-2                               deb   CVE-2022-29458    N
 openssh-client     1:8.9p1-3                           deb   CVE-2020-14145    Low         
 openssh-client     1:8.9p1-3                           deb   CVE-2021-41617    Low         
 passwd             1:4.8.1-2ubuntu2                    deb   CVE-2013-4235     Low         
-patch              2.7.6-7build2                       deb   CVE-2018-6952     Negligible  
 patch              2.7.6-7build2                       deb   CVE-2021-45261    Negligible  
+patch              2.7.6-7build2                       deb   CVE-2018-6952     Negligible  
 perl               5.34.0-3ubuntu1                     deb   CVE-2020-16156    Medium      
 perl-base          5.34.0-3ubuntu1                     deb   CVE-2020-16156    Medium      
 perl-modules-5.34  5.34.0-3ubuntu1                     deb   CVE-2020-16156    Medium      
