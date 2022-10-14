@@ -30,6 +30,12 @@ d exec -it adegoodyer-ubuntu-latest /bin/bash
 
 ## Build Commands
 
+### Documentation
+```bash
+# generate grype, syft and README.md
+./scripts/gen-docs.sh
+```
+
 ### Git
 - make change and push as usual
 - image build and push will occur when a tag is added
