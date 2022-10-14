@@ -1,11 +1,36 @@
 # Ubuntu
 
 ## Overview
-Ubuntu container with GMT timezone, GB locale and additional tools preinstalled.
+Ubuntu container with GMT timezone, GB locale and additional tools pre-installed.
 
-## Commands
+## Deployment
 
-## Git
+### Docker
+```bash
+# run single command
+d run -it --rm \
+--name adegoodyer-ubuntu-throwaway \
+adegoodyer/ubuntu:latest \
+curl -L --head google.co.uk
+
+# disposable container
+d run -it --rm \
+--name adegoodyer-ubuntu-throwaway \
+adegoodyer/ubuntu:latest \
+/bin/bash
+
+# persistent container
+d run -itd \
+--name adegoodyer-ubuntu-latest \
+adegoodyer/ubuntu:latest
+
+# connect to persistent container
+d exec -it adegoodyer-ubuntu-latest /bin/bash
+```
+
+## Build Commands
+
+### Git
 - make change and push as usual
 - image build and push will occur when a tag is added
   - can be any branch
@@ -18,7 +43,7 @@ git tag -a 22.04 -m 22.04
 git push --follow-tags
 ```
 
-## Docker
+### Docker
 ```bash
 # build and test locally
 d build -t ubuntu-test:latest . &&
